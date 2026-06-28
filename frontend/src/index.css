@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  /* Light Mode Values */
+  --background: #ffffff;
+  --foreground: #09090b; /* Zinc 950 */
+  
+  --sidebar-bg: #f4f4f5; /* Zinc 100 */
+  --sidebar-fg: #52525b; /* Zinc 600 */
+  --sidebar-border: #e4e4e7; /* Zinc 200 */
+  
+  --primary: #09090b;
+  --primary-foreground: #ffffff;
+  
+  --card-bg: #ffffff;
+  --card-fg: #09090b;
+  --card-border: #e4e4e7; /* Zinc 200 */
+  
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  
+  --accent: #f4f4f5;
+  --accent-foreground: #09090b;
+  
+  --border: #e4e4e7; /* Zinc 200 */
+}
+
+/* Dark Mode Overrides */
+.dark {
+  --background: #09090b; /* Zinc 950 */
+  --foreground: #f4f4f5; /* Zinc 100 */
+  
+  --sidebar-bg: #09090b;
+  --sidebar-fg: #a1a1aa; /* Zinc 400 */
+  --sidebar-border: #18181b; /* Zinc 900 */
+  
+  --primary: #f4f4f5;
+  --primary-foreground: #09090b;
+  
+  --card-bg: #09090b;
+  --card-fg: #fafafa;
+  --card-border: #18181b;
+  
+  --muted: #18181b;
+  --muted-foreground: #71717a;
+  
+  --accent: #27272a; /* Zinc 800 */
+  --accent-foreground: #fafafa;
+  
+  --border: #18181b;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-sidebar: var(--sidebar-bg);
+  --color-sidebar-fg: var(--sidebar-fg);
+  --color-sidebar-border: var(--sidebar-border);
+  
+  --color-card-bg: var(--card-bg);
+  --color-card-fg: var(--card-fg);
+  --color-card-border: var(--card-border);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  --color-border: var(--border);
+  
+  --font-sans: 'Geist', 'Inter', 'system-ui', '-apple-system', 'sans-serif';
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'monospace';
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  code, pre {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+  
+  /* Apply smooth transition to background, borders and texts for theme-switching */
+  body, aside, header, main, div, button, input, tr, td, th {
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, fill 0.2s ease, stroke 0.2s ease;
+  }
+}
+
+/* Custom Webkit scrollbar for a sleeker dashboard feel */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}

@@ -1,0 +1,31 @@
+# ==========================================
+# Bağımlılıklar (Her iki proje için)
+# ==========================================
+node_modules/
+
+# ==========================================
+# Backend Klasörü İstisnaları
+# ==========================================
+backend/.env
+backend/.env.*
+backend/logs/
+backend/*.log
+
+# ==========================================
+# Frontend Klasörü İstisnaları (Vite/Next.js/CRA)
+# ==========================================
+frontend/.env
+frontend/.env.local
+frontend/.env.production.local
+frontend/dist/
+frontend/build/
+frontend/.next/
+frontend/out/
+
+# ==========================================
+# Geliştirici ve Sistem Dosyaları
+# ==========================================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
